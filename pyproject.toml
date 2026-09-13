@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "headerguard"
+version = "1.0.0"
+description = "HTTP security header checker with HTML and JSON reports"
+requires-python = ">=3.10"
+readme = "README.md"
+
+[project.scripts]
+headerguard = "headerguard:main"
+
+[tool.setuptools]
+py-modules = ["headerguard"]

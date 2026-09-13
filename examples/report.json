@@ -1,0 +1,55 @@
+{
+  "url": "https://demo.example.test (synthetic example)",
+  "http_status": 200,
+  "generated_at": "2026-09-13T09:02:17.894548+00:00",
+  "redirects": [],
+  "findings": [
+    {
+      "check": "HTTPS",
+      "status": "pass",
+      "detail": "HTTPS response",
+      "recommendation": "Serve the site over HTTPS with a valid certificate."
+    },
+    {
+      "check": "HSTS",
+      "status": "pass",
+      "detail": "max-age=31536000",
+      "recommendation": "Configure a positive max-age on HTTPS after testing. HSTS delivered over HTTP is ignored."
+    },
+    {
+      "check": "Content Security Policy",
+      "status": "warn",
+      "detail": "Enforced CSP missing",
+      "recommendation": "Review script sources, nonces/hashes, object-src and base-uri. This heuristic is not a complete CSP parser; report-only does not enforce a policy."
+    },
+    {
+      "check": "Clickjacking protection",
+      "status": "pass",
+      "detail": "DENY",
+      "recommendation": "Use a valid frame-ancestors policy for intended embedding; X-Frame-Options DENY or SAMEORIGIN supports legacy clients."
+    },
+    {
+      "check": "MIME sniffing",
+      "status": "pass",
+      "detail": "nosniff",
+      "recommendation": "Set X-Content-Type-Options: nosniff and correct Content-Type values."
+    },
+    {
+      "check": "Referrer policy",
+      "status": "pass",
+      "detail": "strict-origin-when-cross-origin",
+      "recommendation": "Consider strict-origin-when-cross-origin or no-referrer according to privacy needs."
+    },
+    {
+      "check": "Permissions policy",
+      "status": "review",
+      "detail": "No explicit policy",
+      "recommendation": "Review browser feature access. Disable unused features, for example camera=(), microphone=()."
+    }
+  ],
+  "summary": {
+    "pass": 5,
+    "warn": 1,
+    "review": 1
+  }
+}
